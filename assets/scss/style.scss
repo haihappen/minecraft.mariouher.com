@@ -1,1 +1,26 @@
-@import 'foundation';
+@import 'foundation/foundation-global';
+@import 'foundation/components/grid';
+
+@import 'compass/css3/images';
+
+$retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+
+body {
+  @include background-image(
+    image-url('grass_side.png'),
+    image-url('dirt.png')
+  );
+
+  background-repeat: repeat-x, repeat;
+  background-size: image-width('grass_side.png') image-height('grass_side.png'), image-width('dirt.png') image-height('dirt.png');
+}
+
+header {
+  @include grid-row;
+  
+  h1 {
+    @include grid-column(12);
+
+    text-align: center;
+  }
+}
