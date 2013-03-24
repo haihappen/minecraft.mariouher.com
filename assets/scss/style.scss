@@ -1,26 +1,30 @@
-@import 'foundation/foundation-global';
-@import 'foundation/components/grid';
-
 @import 'compass/css3/images';
+@import 'compass/css3/box-shadow';
 
 $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+
+$black: #000000;
+
+$width: 960px;
+$padding: 40px;
 
 body {
   @include background-image(
     image-url('grass_side.png'),
     image-url('dirt.png')
   );
+  @include box-shadow(0 0 20px 0 rgba($black, 0.75));
+
+  margin: 2 * $padding auto;
+  width: $width;
 
   background-repeat: repeat-x, repeat;
-  background-size: image-width('grass_side.png') image-height('grass_side.png'), image-width('dirt.png') image-height('dirt.png');
+  background-size: image-width('grass_side.png') image-height('grass_side.png'), image-width('dirt.png') image-height('dirt.png')5
 }
 
-header {
-  @include grid-row;
-  
-  h1 {
-    @include grid-column(12);
+#video {
+  padding: $padding;
+  width: $width - 2 * $padding;
 
-    text-align: center;
-  }
+  background-color: rgba($black, 1);
 }
